@@ -27,15 +27,15 @@ class Television:
             self.__muted = False  # Unmute when turning off
 
     def mute(self) -> None:
-         """
+        """
         :param:self
         Toggling self.__muted to true or false 
         """
         # Method to mute and unmute the TV
         self.__muted = not self.__muted
 
-    def channel_up(self) ->:
-         """
+    def channel_up(self) -> None:
+        """
         :param:self
         Increment channel to go up to three 
         """
@@ -44,7 +44,7 @@ class Television:
             self.__channel = (self.__channel + 1) % (self.MAX_CHANNEL + 1)
 
     def channel_down(self) -> None:
-         """
+        """
         :param:self
         Increment channel to go down to three 
         """
@@ -53,7 +53,7 @@ class Television:
             self.__channel = (self.__channel - 1) % (self.MAX_CHANNEL + 1)
 
     def volume_up(self) -> None:
-         """
+        """
         :param:self
         Increment Volume to go up to two
         """
@@ -62,7 +62,7 @@ class Television:
             self.__volume = min(self.__volume + 1, self.MAX_VOLUME)
 
     def volume_down(self) -> None:
-         """
+        """
         :param:self
         Increment volume to go down to two 
         """
@@ -71,16 +71,12 @@ class Television:
             self.__volume = max(self.__volume - 1, self.MIN_VOLUME)
 
     def __str__(self)-> str:
-         """
+        """
         :param:self
         Displaying the cureent status of the variables
         """
         # Method to format the TV object values
-        power_status = "On" if self.__status else "Off"
-        return f"Power [{power_status}], Channel [{self.__channel}], Volume [{self.__volume}]"
-    """
-    """
+        power_status = "True" if self.__status else "False"
+        return f"# Power = [{power_status}], Channel = [{self.__channel}], Volume = [{self.__volume}]"
 
 
-if __name__ == "__main__":
-    

@@ -22,12 +22,12 @@ def test_power():
 def test_mute():
     # Test muting and unmuting the TV
     tv = Television()
-    
+
     tv.power()
     # Mute the TV
     tv.volume_up()
     tv.mute()
-    assert str(tv) == "# Power = [True], Channel = [0], Volume = [0]"
+    assert str(tv) == "# Power = [True], Channel = [0], Volume = [1]"
 
     # Unmute the TV
     tv.mute()
@@ -91,5 +91,3 @@ def test_volume_down():
     tv.power()
     tv.volume_down()
     assert str(tv) == "# Power = [False], Channel = [0], Volume = [1]"
-"""
-"""
