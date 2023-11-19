@@ -91,4 +91,3 @@ def test_volume_down():
     tv.power()
     tv.volume_down()
     assert str(tv) == "# Power = [False], Channel = [0], Volume = [1]"
-
