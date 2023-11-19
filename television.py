@@ -40,8 +40,8 @@ class Television:
         Increment channel to go up to three 
         """
         # Method to increase the TV channel
-        if self.__status:
-            self.__channel = (self.__channel + 1) % (self.MAX_CHANNEL + 1)
+        if self.__status and self.__channel < Television.MAX_CHANNEL:
+            self.__channel = (self.__channel + 1)
 
     def channel_down(self) -> None:
         """
@@ -49,8 +49,8 @@ class Television:
         Increment channel to go down to three 
         """
         # Method to decrease the TV channel
-        if self.__status:
-            self.__channel = (self.__channel - 1) % (self.MAX_CHANNEL + 1)
+        if self.__status and self.__channel > Television.MIN_CHANNEL:
+           self.__channel = (self.__channel - 1)
 
     def volume_up(self) -> None:
         """
@@ -59,7 +59,7 @@ class Television:
         """
         # Method to increase the TV volume
         if self.__status and not self.__muted:
-            self.__volume = min(self.__volume + 1, self.MAX_VOLUME)
+            self.__volume = min(self.__volume + 1, Television.MAX_VOLUME)
 
     def volume_down(self) -> None:
         """
@@ -68,7 +68,7 @@ class Television:
         """
         # Method to decrease the TV volume
         if self.__status and not self.__muted:
-            self.__volume = max(self.__volume - 1, self.MIN_VOLUME)
+            self.__volume = max(self.__volume - 1, Television.MIN_VOLUME)
 
     def __str__(self)-> str:
         """
