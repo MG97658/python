@@ -78,6 +78,8 @@ class Television:
         # Method to format the TV object values
         power_status = "On" if self.__status else "Off"
         return f"Power [{power_status}], Channel [{self.__channel}], Volume [{self.__volume}]"
+    """
+    """
 
 
 if __name__ == "__main__":
